@@ -1,0 +1,9 @@
+datasets/
+checkpoints/
+logs/
+*.pth
+*.pt
+*.ckpt
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
