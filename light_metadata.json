@@ -1,9 +1,0 @@
-{
-    "pair_id": "000000",
-    "image1": "000000_10",
-    "image2": "000000_11",
-    "dataset": "KITTI",
-    "haze_level": "light",
-    "beta": 0.2,
-    "atmospheric_light": 0.904434129126674
-}
