@@ -72,3 +72,64 @@ EPE increases with haze density:
 * SEA-RAFT performs better under medium, dense, and extreme haze.
 * SEA-RAFT appears more robust under severe visibility degradation.
 
+
+
+## Failure Case Analysis
+
+Three representative examples were selected to visualize the effect of severe haze on optical-flow estimation.
+
+### Sample 000000
+
+* Extreme haze reduces scene visibility and image contrast.
+* Coarse motion patterns remain detectable.
+* Object boundaries become less distinct.
+* Distant scene regions become more ambiguous.
+
+### Sample 000050
+
+* Large moving objects such as trucks remain detectable.
+* Motion regions become less separated from the background.
+* Road and background texture information is significantly reduced.
+* Fine motion structure becomes harder to estimate.
+
+### Sample 000100
+
+* Severe haze causes strong visibility degradation in distant regions.
+* Motion boundaries become less precise.
+* Flow fields become smoother and less detailed.
+* Large homogeneous motion regions appear due to reduced correspondence information.
+
+### Summary
+
+Across all selected examples:
+
+* Haze reduces image contrast and scene visibility.
+* Texture information is progressively lost as haze density increases.
+* Motion boundaries become less distinct.
+* Distant regions become increasingly difficult to match reliably.
+* These observations are consistent with the quantitative evaluation, where both RAFT and SEA-RAFT exhibit increasing EPE and F1-all as haze density increases.
+
+The visual results support the hypothesis that haze negatively impacts optical-flow estimation and motivate the use of haze-aware guidance mechanisms in later phases of the project.
+
+
+## Baseline Selection
+
+### Objective
+
+Determine the strongest baseline model before introducing the proposed VLM-guided haze-aware optical-flow method.
+
+### Findings
+
+| Haze Level | Better Model |
+|------------|------------- |
+| Clean      | RAFT         |
+| Light      | RAFT         |
+| Medium     | SEA-RAFT     |
+| Dense      | SEA-RAFT     |
+| Extreme    | SEA-RAFT     |
+
+### Conclusion
+
+RAFT achieves lower EPE on clean and light haze conditions. However, SEA-RAFT achieves lower EPE under medium, dense, and extreme haze conditions, which are the primary conditions of interest for this research.
+
+Therefore, SEA-RAFT is selected as the primary baseline for future VLM-guided haze-aware optical-flow experiments due to its superior robustness under severe visibility degradation.
