@@ -31,7 +31,7 @@ HAZE_LEVELS = {
 }
 
 # First 100 KITTI pairs
-for sample_id in range(100):
+for sample_id in range(200):
 
     pair_name = f"{sample_id:06d}"
 
@@ -215,5 +215,5 @@ for sample_id in range(100):
     )
 
 print(
-    "Finished generating first 100 KITTI pairs."
+    "Finished generating first 200 KITTI pairs."
 )
