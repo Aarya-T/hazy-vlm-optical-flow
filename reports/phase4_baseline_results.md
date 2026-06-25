@@ -134,7 +134,7 @@ WAFT performs reasonably under haze but does not match the robustness of RAFT, G
 # Ranking Under Extreme Haze
 
 | Rank   | Model         |       EPE    |
-|--------|---------------|-------- -:   |
+|--------|---------------|--------------|
 | 1      | RAFT          | **7.391664** |
 | 2      | GMA           | 8.052250     |
 | 3      | Flow-Anything | 11.693092    |
